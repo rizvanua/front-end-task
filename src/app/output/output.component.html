@@ -1,0 +1,13 @@
+<div *ngIf="checkLenght()">
+  <div *ngFor="let block of blocks" class="panel panel-default">
+    <div class="panel-body" [attr.keyNumber]="blocks.indexOf(block)"
+         [routerLink]="['/page', block.name]"
+         [queryParams]="{Index:blocks.indexOf(block)}"
+    >
+    <h2>{{block.name}}</h2>
+    <a class="link" href={{block.html_url}}>{{block.html_url}}</a>
+    <p class="star">{{block.stargazers_count}}</p>
+    <p class="calendar">{{momentConv(block.created_at)}}</p>
+      </div>
+  </div>
+</div>
