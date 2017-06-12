@@ -20,6 +20,15 @@ export class HttpService{
       );
 
   }
+  getOneRep(id){
+    return this.http.get(`https://api.github.com/repositories/${id}`).map(
+      (response:Response)=>{
+        const data =response.json();
+        this.array=data;
+        return data;
+      }
+    );
+  }
   arrayData(){
     return this.array;
     //console.log();

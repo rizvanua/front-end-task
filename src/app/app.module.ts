@@ -11,12 +11,12 @@ import {ObserveService} from "./services/Observe";
 import {PagesComponent} from "./pages/pages.component";
 import {Routes, RouterModule} from "@angular/router";
 import {HomeComponent} from "./home/home.component";
-import {PassClickService} from "./services/PassClickService";
+//import {PassClickService} from "./services/PassClickService";
 import {PageResolver} from "./pages/page-resolver.service";
 
 const appRoutes:Routes=[
   {path:"",component:HomeComponent},
-  {path:"page/:name",component:PagesComponent, resolve:{data:PageResolver}}
+  {path:"page/:id",component:PagesComponent, resolve:{data:PageResolver}}
   ];
 
 @NgModule({
@@ -33,7 +33,7 @@ const appRoutes:Routes=[
     HttpModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [HttpService,ObserveService,PassClickService,PageResolver],
+  providers: [HttpService,ObserveService,PageResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

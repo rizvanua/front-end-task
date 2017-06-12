@@ -1,8 +1,9 @@
 import {Component, OnInit,AfterContentInit} from '@angular/core';
 import {ActivatedRoute, Params, Data} from "@angular/router";
+import {HttpService} from "../services/HttpService";
 
-import {PassClickService} from "../services/PassClickService";
 import * as _ from 'underscore';
+import {Page} from "./page.model";
 
 
 @Component({
@@ -11,24 +12,33 @@ import * as _ from 'underscore';
   styleUrls: ['./pages.component.css']
 })
 export class PagesComponent implements OnInit,AfterContentInit{
-  name:any;
-  blobData:any;
+  public id:any;
+  public blobData:Page;
   public _:any=_;
-constructor(private route: ActivatedRoute, private PassClickService:PassClickService){}
+  public dataObj={};
+constructor(private route: ActivatedRoute, private HttpService: HttpService){
+
+};
+
   ngOnInit(){
 
 this.route.params.
   subscribe(
   (params:Params)=>{
-      this.name=params['name']
-    //console.log(params);
+      this.id=params['id'];
+    this.HttpService.getOneRep(this.id).subscribe(
+      (resp:any)=>{
+        this.blobData=new Page(resp.id, resp.name, resp.url, resp.description);
+        this.dataObj=this.blobData;
+      },
+      (error)=>console.log(error)
+    );
+
   }
 );
     this.route.data.subscribe(
       (data:Data)=>{
-
-
-        console.log(data['data']);
+        //console.log(data['data']);
       }
     );
 
