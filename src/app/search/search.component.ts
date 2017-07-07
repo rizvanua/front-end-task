@@ -20,7 +20,7 @@ export class SearchComponent {
       .subscribe(
         (servers:any)=>{
           this.ObserveService.ObserveData.next(servers.items);
-          //console.log(servers.items)
+          servers.items;
           },
         (error)=>console.log(error)
       );

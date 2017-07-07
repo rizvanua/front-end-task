@@ -1,0 +1,3 @@
+<select name="country" id="country">
+  <option *ngFor="let contrie of contries" value="{{contrie.value}}" [appSelected]="contrie.value==4">{{contrie.name}}</option>
+</select>

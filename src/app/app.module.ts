@@ -13,10 +13,12 @@ import {Routes, RouterModule} from "@angular/router";
 import {HomeComponent} from "./home/home.component";
 //import {PassClickService} from "./services/PassClickService";
 import {PageResolver} from "./pages/page-resolver.service";
+import { SelectedDirective } from './directives/selected.directive';
+import { DropdownComponent } from './dropdown-list/dropdown/dropdown.component';
 
 const appRoutes:Routes=[
   {path:"",component:HomeComponent},
-  {path:"page/:id",component:PagesComponent, resolve:{data:PageResolver}}
+  {path:"page/:id",component:PagesComponent, /*resolve:{data:PageResolver}*/}
   ];
 
 @NgModule({
@@ -25,7 +27,9 @@ const appRoutes:Routes=[
     HomeComponent,
     SearchComponent,
     OutputComponent,
-    PagesComponent
+    PagesComponent,
+    SelectedDirective,
+    DropdownComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,7 @@ const appRoutes:Routes=[
     HttpModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [HttpService,ObserveService,PageResolver],
+  providers: [HttpService,ObserveService,/*PageResolver*/],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
