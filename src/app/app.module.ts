@@ -15,6 +15,7 @@ import {HomeComponent} from "./home/home.component";
 import {PageResolver} from "./pages/page-resolver.service";
 import { SelectedDirective } from './directives/selected.directive';
 import { DropdownComponent } from './dropdown-list/dropdown/dropdown.component';
+import { SimpleformComponent } from './simpleform/simpleform.component';
 
 const appRoutes:Routes=[
   {path:"",component:HomeComponent},
@@ -29,7 +30,8 @@ const appRoutes:Routes=[
     OutputComponent,
     PagesComponent,
     SelectedDirective,
-    DropdownComponent
+    DropdownComponent,
+    SimpleformComponent
   ],
   imports: [
     BrowserModule,

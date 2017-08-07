@@ -1,3 +1,7 @@
 <select name="country" id="country">
-  <option *ngFor="let contrie of contries" value="{{contrie.value}}" [appSelected]="contrie.value==4">{{contrie.name}}</option>
+  <option *ngFor="let contrie of contries" value="{{contrie.value}}" [selected]="contrie.value=='3'">{{contrie.name}}</option>
 </select>
+<div *ngFor="let contrie of contries; let i=index">
+  <input type="text" (input)="myAlert($event.target.value)"/>
+  {{contries[i].one | uppercase}}
+  </div>
