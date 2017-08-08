@@ -5,6 +5,8 @@ import {RouterOutlet } from "@angular/router";
 import {RouterTestingModule} from "@angular/router/testing";
 import {HomeComponent} from "./home/home.component";
 import {By} from "@angular/platform-browser";
+import {DropdownComponent} from "./dropdown-list/dropdown/dropdown.component";
+// import {DropdownComponent} from "@angular/platform-browser";
 
 
 describe('AppComponent', () => {
@@ -12,7 +14,8 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
 
       declarations: [
-        AppComponent
+        AppComponent,
+        DropdownComponent
       ],
       imports: [
         RouterTestingModule.withRoutes(

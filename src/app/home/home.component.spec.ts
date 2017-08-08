@@ -8,19 +8,22 @@ import {RouterTestingModule} from "@angular/router/testing";
 import {ObserveService} from "../services/Observe";
 import {HttpService} from "../services/HttpService";
 import {HttpModule} from "@angular/http";
+import {SimpleformComponent} from "../simpleform/simpleform.component";
+import {FormsModule} from "@angular/forms";
 
 
 
 describe('HomeComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [HomeComponent,SearchComponent,OutputComponent],
+      declarations: [HomeComponent,SearchComponent,OutputComponent,SimpleformComponent],
       providers: [
         HttpService,
         ObserveService
       ],
       imports: [
         HttpModule,
+        FormsModule,
         RouterTestingModule.withRoutes(
           [])
       ]
