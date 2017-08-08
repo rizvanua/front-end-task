@@ -1,0 +1,19 @@
+<form (ngSubmit)="submitForm(f)" #f="ngForm">
+<div class="col-sm-5 form-group">
+  <label for="first-name"> First Name</label>
+  <input type="text"
+         id="first-name"
+         name="firstName"
+         class="form-control"
+         ngModel
+         required
+         pattern="^[A-Za-z]+$"
+  />
+  <label for="first-name"> Last Name</label>
+  <input type="text" id="last-name" name="lastName" class="form-control" ngModel required/>
+  <label>Shortly About</label>
+  <textarea class="form-control" rows="5" id="comment" name="aboutUser" ngModel></textarea>
+  <button type="submit" class="btn btn-success" [disabled]="!f.valid">Submit</button>
+  <button  type="button" (click)="onClear()" class="btn btn-default">Reset</button>
+</div>
+</form>
