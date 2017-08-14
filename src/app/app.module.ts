@@ -11,7 +11,6 @@ import {ObserveService} from "./services/Observe";
 import {PagesComponent} from "./pages/pages.component";
 import {Routes, RouterModule} from "@angular/router";
 import {HomeComponent} from "./home/home.component";
-//import {PassClickService} from "./services/PassClickService";
 import {PageResolver} from "./pages/page-resolver.service";
 import { SelectedDirective } from './directives/selected.directive';
 import { DropdownComponent } from './dropdown-list/dropdown/dropdown.component';
